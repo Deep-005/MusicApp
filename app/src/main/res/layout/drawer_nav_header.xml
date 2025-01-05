@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_150sdp"
+    android:padding="@dimen/_5sdp"
+    android:layout_marginTop="80dp"
+    android:background="@drawable/nav_head">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/navheadAnimation"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="match_parent"
+        app:lottie_rawRes="@raw/woofer"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+    <TextView
+        android:id="@+id/navText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="124dp"
+        android:layout_toEndOf="@id/navheadAnimation"
+        android:layout_marginTop="@dimen/_45sdp"
+        android:text="@string/music_makes_me_happy"
+        android:fontFamily="@font/two"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18ssp" />
+
+</RelativeLayout>

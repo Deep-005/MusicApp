@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:gravity="center_vertical"
+    tools:context=".Fragment.NowPlaying">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/coverCard"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginVertical="5dp"
+        app:cardCornerRadius="15dp">
+
+        <ImageView
+            android:id="@+id/fragImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/music"
+            android:contentDescription="@string/item" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/nextBtnFrag"
+        app:icon="@drawable/double_arrow"
+        app:iconSize="35dp"
+        app:iconTint="@color/white"
+        android:backgroundTint="@color/black"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/playPauseBtnFrag"
+        android:layout_toStartOf="@id/nextBtnFrag"
+        android:layout_marginEnd="10dp"
+        app:icon="@drawable/play"
+        app:iconSize="35dp"
+        app:iconTint="@color/white"
+        android:backgroundTint="@color/black"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/songNameNP"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@id/playPauseBtnFrag"
+        android:layout_toEndOf="@id/coverCard"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:text="@string/song_name"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

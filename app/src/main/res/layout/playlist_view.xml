@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    app:strokeWidth="2dp"
+    android:layout_margin="10dp"
+    android:background="@color/white"
+    app:strokeColor="@color/black">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/playListContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp">
+
+        <ImageView
+            android:id="@+id/playListImg"
+            android:layout_width="170dp"
+            android:layout_height="130dp"
+            android:src="@drawable/music"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/song_name" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/playListName"
+        android:layout_width="130dp"
+        android:layout_height="@dimen/_40sdp"
+        android:text="@string/playlist_name"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:paddingStart="5dp"
+        android:paddingEnd="2dp"
+        android:layout_marginTop="130dp"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"/>
+
+    <ImageButton
+        android:id="@+id/playListDel"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/del"
+        android:background="@color/white"
+        android:layout_gravity="bottom|end"
+        android:contentDescription="@string/del_btn" />
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawerLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.MusicListActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/folders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_1sdp">
+
+                <Button
+                    android:id="@+id/online"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/search"
+                    android:contentDescription="@string/online_music"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:text="@string/online"
+                    android:textColor="@color/black"
+                    android:textAllCaps="false"/>
+
+
+                <Button
+                    android:id="@+id/liked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/favorite"
+                    android:drawableTint="@color/black"
+                    android:contentDescription="@string/liked_music"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:text="@string/liked_songs"
+                    android:textColor="@color/black"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/playlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/queue_music"
+                    android:contentDescription="@string/playlist_button"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:text="@string/playlist"
+                    android:textColor="@color/black"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/total_songs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/total_songs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listOfSongs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:scrollbarThumbVertical="@drawable/scroll"
+                android:padding="@dimen/_5sdp"/>
+
+        </LinearLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nowPlaying"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:name="com.example.musicapp.Fragment.NowPlaying"
+            tools:Layout="fragment_now_playing"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/drawerNavigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#151515"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/drawer_nav_header"
+        app:menu="@menu/drawer_nav_menu"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

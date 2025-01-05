@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_marginBottom="3dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cover"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_marginStart="10dp"
+        app:cardCornerRadius="15dp">
+
+        <ImageView
+            android:id="@+id/coverInner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/music"
+            android:contentDescription="@string/item" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/songName"
+        android:layout_toEndOf="@id/cover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/songDuration"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/black"
+        android:text="@string/song_name"
+        android:textStyle="bold"
+        android:singleLine="true"
+        android:layout_marginStart="@dimen/_20sdp" />
+
+    <TextView
+        android:id="@+id/album"
+        android:layout_toEndOf="@id/cover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/songDuration"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/black"
+        android:text="@string/album_name"
+        android:singleLine="true"
+        android:layout_marginStart="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_18sdp"/>
+
+    <TextView
+        android:id="@+id/songDuration"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="@string/start"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginHorizontal="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"/>
+
+</RelativeLayout>
